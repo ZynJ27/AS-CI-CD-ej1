@@ -1,6 +1,9 @@
 name: Tests
 
-on: push
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   test:
@@ -8,9 +11,9 @@ jobs:
     steps:
       - name: Bajar codigo
         uses: actions/checkout@v7
-
+        
       - name: Instalar pytest
         run: pip install pytest
-
+        
       - name: Ejecutar tests
         run: pytest test.py
